@@ -1,0 +1,36 @@
+{
+  "manifest_version": 2,
+  "name": "Cats on Campus",
+  "version": "1.2.1",
+  "author":"Kaveet Laxmidas",
+
+  "permissions": [
+  "tabs",
+  "http://ecampusprod.tamu.edu/*"
+  ],
+
+   "page_action": {
+          "default_icon": { 
+            "38": "icon38.png"          
+          },
+          "default_title": "eCampus Mods",     
+          "default_popup": "popup.html" // Options menu progress     
+    },
+
+
+  "background": {
+    "scripts":["background.js"]
+    },
+ 
+  "description": "Lighten up eCampus with a cat or two!",
+
+  "icons": { "128": "icon128.png"},
+
+  "content_scripts": [
+    {
+      "matches": ["https://ecampusprod.tamu.edu/webapps/portal/execute/tabs/*"],
+      "js": ["mod.js"]
+    }
+  ]
+}
+	
